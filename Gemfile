@@ -64,3 +64,4 @@ end
 
  gem "faker"
  gem "hamlit"
+ gem "annotate"
