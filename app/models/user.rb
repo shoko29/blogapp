@@ -30,9 +30,18 @@ class User < ApplicationRecord
   end
 
   def display_name
-    self.email.split('@').first
+    # ぼっち演算子
+    profile&.nickname || self.email.split('@').first
   end
-  
+
+  def birthday
+    profile&.birthday
+  end
+
+  def gender
+    profile&.gender
+  end
+
   def prepare_profile
     # if current_user.profile.present?
     #     @profile = current_user.profile
